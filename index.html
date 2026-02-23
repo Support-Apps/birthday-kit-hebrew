@@ -40,10 +40,9 @@ body { font-family: 'Heebo', sans-serif; background: #fff5f8; padding: 20px; }
 .sticker img { width: 60%; height: auto; object-fit: contain; }
 .sticker-text { font-size: 11px; color: #e8a0b0; font-weight: 700; margin-top: 8px; text-align: center; }
 
-/* Cake Toppers */
 .toppers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 800px; margin: 0 auto; }
-.topper { background: #fff; border-radius: 50%; aspect-ratio: 1; overflow: visible; box-shadow: 0 5px 20px rgba(200,120,140,0.2); border: 4px solid #e8a0b0; position: relative; display: flex; align-items: center; justify-content: center; }
-.topper img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.topper { background: #fff; border-radius: 50%; aspect-ratio: 1; overflow: hidden; box-shadow: 0 5px 20px rgba(200,120,140,0.2); border: 4px solid #e8a0b0; display: flex; align-items: center; justify-content: center; }
+.topper img { width: 60%; height: auto; object-fit: contain; }
 
 @media (max-width: 600px) {
     .toppers-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
@@ -181,12 +180,12 @@ body { font-family: 'Heebo', sans-serif; background: #fff5f8; padding: 20px; }
 .dot4 { bottom: 40px; left: 35px; background: #dda0dd; }
 .dot5 { top: 55%; right: 18px; background: #aed6f1; }
 .dot6 { top: 40%; left: 20px; background: #f5b7b1; }
-.dot7 { top: 20px; left: 40%; background: #98d8c8; }
-.dot8 { bottom: 50px; right: 35%; background: #d7bde2; }
-.dot9 { top: 45px; right: 35%; background: #a9dfbf; }
-.dot10 { bottom: 35px; left: 40%; background: #fadbd8; }
-.dot11 { top: 25%; right: 25px; background: #ffeaa7; }
-.dot12 { bottom: 60%; left: 28px; background: #b5ead7; }
+.dot7 { top: 20px; left: 15%; background: #98d8c8; }
+.dot8 { bottom: 50px; right: 8%; background: #d7bde2; }
+.dot9 { top: 45px; right: 8%; background: #a9dfbf; }
+.dot10 { bottom: 35px; left: 8%; background: #fadbd8; }
+.dot11 { top: 25%; right: 12px; background: #ffeaa7; }
+.dot12 { bottom: 30%; left: 12px; background: #b5ead7; }
 .banner-prop.large { grid-column: span 2; }
 .banner-prop.large .banner-image { width: 130px; height: 130px; }
 .banner-prop.large .banner-text { font-size: 28px; }
