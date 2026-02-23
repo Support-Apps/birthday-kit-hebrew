@@ -42,8 +42,12 @@ body { font-family: 'Heebo', sans-serif; background: #fff5f8; padding: 20px; }
 
 /* Cake Toppers */
 .toppers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 800px; margin: 0 auto; }
-.topper { background: #fff; border-radius: 50%; aspect-ratio: 1; overflow: hidden; box-shadow: 0 5px 20px rgba(200,120,140,0.2); border: 4px solid #e8a0b0; position: relative; display: flex; align-items: center; justify-content: center; }
-.topper img { max-width: 90%; max-height: 90%; object-fit: contain; }
+.topper { background: #fff; border-radius: 50%; aspect-ratio: 1; overflow: visible; box-shadow: 0 5px 20px rgba(200,120,140,0.2); border: 4px solid #e8a0b0; position: relative; display: flex; align-items: center; justify-content: center; }
+.topper img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+
+@media (max-width: 600px) {
+    .toppers-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+}
 
 /* Flyer */
 .flyer { background: #fff; border-radius: 0; max-width: 500px; margin: 0 auto; overflow: hidden; box-shadow: 0 10px 40px rgba(200,120,140,0.15); border: 4px solid #f8c8d8; }
@@ -103,70 +107,66 @@ body { font-family: 'Heebo', sans-serif; background: #fff5f8; padding: 20px; }
 }
 .banner-prop.with-confetti {
     background: 
-        /* Corners and edges */
-        radial-gradient(circle at 5% 8%, #ffb6c1 4px, transparent 4px),
-        radial-gradient(circle at 95% 10%, #b5ead7 5px, transparent 5px),
-        radial-gradient(circle at 8% 92%, #ffeaa7 4px, transparent 4px),
-        radial-gradient(circle at 92% 88%, #dda0dd 5px, transparent 5px),
-        radial-gradient(circle at 3% 45%, #98d8c8 4px, transparent 4px),
-        radial-gradient(circle at 97% 55%, #f7dc6f 5px, transparent 5px),
-        radial-gradient(circle at 12% 20%, #aed6f1 4px, transparent 4px),
-        radial-gradient(circle at 88% 22%, #f5b7b1 5px, transparent 5px),
-        radial-gradient(circle at 15% 75%, #d7bde2 4px, transparent 4px),
-        radial-gradient(circle at 85% 78%, #a9dfbf 5px, transparent 5px),
-        /* Near center-top (around image area) */
-        radial-gradient(circle at 25% 25%, #ffb6c1 4px, transparent 4px),
-        radial-gradient(circle at 75% 28%, #b5ead7 5px, transparent 5px),
-        radial-gradient(circle at 30% 35%, #ffeaa7 4px, transparent 4px),
-        radial-gradient(circle at 70% 32%, #dda0dd 5px, transparent 5px),
-        radial-gradient(circle at 35% 18%, #98d8c8 4px, transparent 4px),
-        radial-gradient(circle at 65% 20%, #f7dc6f 5px, transparent 5px),
-        radial-gradient(circle at 28% 45%, #aed6f1 4px, transparent 4px),
-        radial-gradient(circle at 72% 42%, #f5b7b1 5px, transparent 5px),
-        /* Sides near image */
-        radial-gradient(circle at 18% 38%, #d7bde2 4px, transparent 4px),
-        radial-gradient(circle at 82% 35%, #a9dfbf 5px, transparent 5px),
-        radial-gradient(circle at 20% 55%, #fadbd8 4px, transparent 4px),
-        radial-gradient(circle at 80% 52%, #b5ead7 5px, transparent 5px),
-        /* Bottom corners only - avoid center text */
-        radial-gradient(circle at 10% 85%, #ffb6c1 4px, transparent 4px),
-        radial-gradient(circle at 90% 82%, #ffeaa7 5px, transparent 5px),
+        radial-gradient(circle at 8% 10%, #ffb6c1 4px, transparent 4px),
+        radial-gradient(circle at 25% 8%, #b5ead7 4px, transparent 4px),
+        radial-gradient(circle at 50% 12%, #ffeaa7 4px, transparent 4px),
+        radial-gradient(circle at 75% 10%, #dda0dd 4px, transparent 4px),
+        radial-gradient(circle at 92% 8%, #98d8c8 4px, transparent 4px),
+        radial-gradient(circle at 15% 22%, #f7dc6f 4px, transparent 4px),
+        radial-gradient(circle at 40% 20%, #aed6f1 4px, transparent 4px),
+        radial-gradient(circle at 60% 22%, #f5b7b1 4px, transparent 4px),
+        radial-gradient(circle at 85% 20%, #d7bde2 4px, transparent 4px),
+        radial-gradient(circle at 5% 35%, #a9dfbf 4px, transparent 4px),
+        radial-gradient(circle at 30% 38%, #ffb6c1 4px, transparent 4px),
+        radial-gradient(circle at 70% 35%, #b5ead7 4px, transparent 4px),
+        radial-gradient(circle at 95% 38%, #ffeaa7 4px, transparent 4px),
+        radial-gradient(circle at 10% 52%, #dda0dd 4px, transparent 4px),
+        radial-gradient(circle at 35% 55%, #98d8c8 4px, transparent 4px),
+        radial-gradient(circle at 65% 50%, #f7dc6f 4px, transparent 4px),
+        radial-gradient(circle at 90% 52%, #aed6f1 4px, transparent 4px),
+        radial-gradient(circle at 20% 68%, #f5b7b1 4px, transparent 4px),
+        radial-gradient(circle at 45% 65%, #d7bde2 4px, transparent 4px),
+        radial-gradient(circle at 55% 70%, #a9dfbf 4px, transparent 4px),
+        radial-gradient(circle at 80% 68%, #ffb6c1 4px, transparent 4px),
+        radial-gradient(circle at 8% 80%, #b5ead7 4px, transparent 4px),
+        radial-gradient(circle at 28% 85%, #ffeaa7 4px, transparent 4px),
+        radial-gradient(circle at 50% 82%, #dda0dd 4px, transparent 4px),
+        radial-gradient(circle at 72% 88%, #98d8c8 4px, transparent 4px),
+        radial-gradient(circle at 92% 82%, #f7dc6f 4px, transparent 4px),
         #fff;
 }
 .banner-prop.large.with-confetti {
     background: 
-        /* Corners and edges */
-        radial-gradient(circle at 3% 6%, #ffb6c1 4px, transparent 4px),
-        radial-gradient(circle at 97% 8%, #b5ead7 5px, transparent 5px),
-        radial-gradient(circle at 5% 94%, #ffeaa7 4px, transparent 4px),
-        radial-gradient(circle at 95% 92%, #dda0dd 5px, transparent 5px),
-        radial-gradient(circle at 2% 40%, #98d8c8 4px, transparent 4px),
-        radial-gradient(circle at 98% 60%, #f7dc6f 5px, transparent 5px),
-        radial-gradient(circle at 8% 20%, #aed6f1 4px, transparent 4px),
-        radial-gradient(circle at 92% 18%, #f5b7b1 5px, transparent 5px),
-        radial-gradient(circle at 10% 75%, #d7bde2 4px, transparent 4px),
-        radial-gradient(circle at 90% 78%, #a9dfbf 5px, transparent 5px),
-        /* Near image area - more spread for large banners */
-        radial-gradient(circle at 20% 25%, #ffb6c1 4px, transparent 4px),
-        radial-gradient(circle at 80% 28%, #b5ead7 5px, transparent 5px),
-        radial-gradient(circle at 25% 38%, #ffeaa7 4px, transparent 4px),
-        radial-gradient(circle at 75% 35%, #dda0dd 5px, transparent 5px),
-        radial-gradient(circle at 30% 15%, #98d8c8 4px, transparent 4px),
-        radial-gradient(circle at 70% 18%, #f7dc6f 5px, transparent 5px),
-        radial-gradient(circle at 22% 50%, #aed6f1 4px, transparent 4px),
-        radial-gradient(circle at 78% 48%, #f5b7b1 5px, transparent 5px),
-        radial-gradient(circle at 15% 35%, #d7bde2 4px, transparent 4px),
-        radial-gradient(circle at 85% 32%, #a9dfbf 5px, transparent 5px),
-        /* Extra middle area confetti for large banners */
-        radial-gradient(circle at 35% 22%, #fadbd8 4px, transparent 4px),
-        radial-gradient(circle at 65% 25%, #b5ead7 5px, transparent 5px),
-        radial-gradient(circle at 40% 45%, #ffb6c1 4px, transparent 4px),
-        radial-gradient(circle at 60% 42%, #ffeaa7 5px, transparent 5px),
-        radial-gradient(circle at 38% 55%, #dda0dd 4px, transparent 4px),
-        radial-gradient(circle at 62% 52%, #98d8c8 5px, transparent 5px),
-        /* Bottom corners */
-        radial-gradient(circle at 8% 88%, #ffb6c1 4px, transparent 4px),
-        radial-gradient(circle at 92% 85%, #ffeaa7 5px, transparent 5px),
+        radial-gradient(circle at 5% 8%, #ffb6c1 4px, transparent 4px),
+        radial-gradient(circle at 22% 6%, #b5ead7 4px, transparent 4px),
+        radial-gradient(circle at 42% 10%, #ffeaa7 4px, transparent 4px),
+        radial-gradient(circle at 62% 7%, #dda0dd 4px, transparent 4px),
+        radial-gradient(circle at 82% 9%, #98d8c8 4px, transparent 4px),
+        radial-gradient(circle at 95% 6%, #f7dc6f 4px, transparent 4px),
+        radial-gradient(circle at 12% 20%, #aed6f1 4px, transparent 4px),
+        radial-gradient(circle at 32% 22%, #f5b7b1 4px, transparent 4px),
+        radial-gradient(circle at 52% 18%, #d7bde2 4px, transparent 4px),
+        radial-gradient(circle at 72% 22%, #a9dfbf 4px, transparent 4px),
+        radial-gradient(circle at 90% 20%, #ffb6c1 4px, transparent 4px),
+        radial-gradient(circle at 6% 34%, #b5ead7 4px, transparent 4px),
+        radial-gradient(circle at 25% 36%, #ffeaa7 4px, transparent 4px),
+        radial-gradient(circle at 48% 32%, #dda0dd 4px, transparent 4px),
+        radial-gradient(circle at 68% 36%, #98d8c8 4px, transparent 4px),
+        radial-gradient(circle at 88% 34%, #f7dc6f 4px, transparent 4px),
+        radial-gradient(circle at 15% 50%, #aed6f1 4px, transparent 4px),
+        radial-gradient(circle at 38% 48%, #f5b7b1 4px, transparent 4px),
+        radial-gradient(circle at 62% 52%, #d7bde2 4px, transparent 4px),
+        radial-gradient(circle at 85% 50%, #a9dfbf 4px, transparent 4px),
+        radial-gradient(circle at 8% 65%, #ffb6c1 4px, transparent 4px),
+        radial-gradient(circle at 28% 68%, #b5ead7 4px, transparent 4px),
+        radial-gradient(circle at 50% 65%, #ffeaa7 4px, transparent 4px),
+        radial-gradient(circle at 72% 68%, #dda0dd 4px, transparent 4px),
+        radial-gradient(circle at 92% 65%, #98d8c8 4px, transparent 4px),
+        radial-gradient(circle at 5% 80%, #f7dc6f 4px, transparent 4px),
+        radial-gradient(circle at 25% 82%, #aed6f1 4px, transparent 4px),
+        radial-gradient(circle at 48% 85%, #f5b7b1 4px, transparent 4px),
+        radial-gradient(circle at 70% 82%, #d7bde2 4px, transparent 4px),
+        radial-gradient(circle at 90% 88%, #a9dfbf 4px, transparent 4px),
         #fff;
 }
 .banner-title { font-family: 'Great Vibes', cursive; font-size: 28px; color: #c97b8a; margin-bottom: 10px; }
@@ -272,6 +272,13 @@ body { font-family: 'Heebo', sans-serif; background: #fff5f8; padding: 20px; }
     margin-bottom: 5px;
 }
 
+
+
+@media (max-width: 768px) {
+    .topper { width: 100%; min-width: 120px; }
+    .topper-image { height: 100px; }
+    .topper-image img { max-width: 90%; max-height: 90%; }
+}
 
 @media print { .header, .tabs, .download-section { display: none; } }
 </style>
